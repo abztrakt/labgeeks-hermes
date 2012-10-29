@@ -1,8 +1,12 @@
 from django import forms
+from django.forms import ModelForm
+from labgeeksrpg_config.models import Notification
 
 
-class LoginForm(forms.Form):
-    """ The login form for any features that require authentication.
-    """
-    username = forms.CharField(max_length=10)
-    password = forms.CharField(max_length=100, widget=forms.PasswordInput(render_value=False))
+class NotificationForm(ModelForm):
+    def save(self, *args, **kwargs):
+        inst = ModelForm.save(self, *args, **kwargs)
+        return inst
+
+    class Meta:
+        model = Notification
