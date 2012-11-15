@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from labgeeksrpg_config.models import Notification
+from labgeeks_hermes.models import Notification
 import datetime
 import urllib
 import urllib2
