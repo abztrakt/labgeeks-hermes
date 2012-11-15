@@ -2,7 +2,7 @@ from django import template
 register = template.Library()
 
 import re
-from people.models import UserProfile
+from labgeeks_people.models import UserProfile
 
 
 @register.simple_tag

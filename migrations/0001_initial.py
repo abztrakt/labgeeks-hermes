@@ -9,7 +9,7 @@ class Migration(SchemaMigration):
     def forwards(self, orm):
         
         # Adding model 'Notification'
-        db.create_table('labgeeksrpg_config_notification', (
+        db.create_table('labgeeks_config_notification', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('date', self.gf('django.db.models.fields.DateTimeField')(auto_now=True, blank=True)),
             ('title', self.gf('django.db.models.fields.CharField')(max_length=100)),
@@ -18,13 +18,13 @@ class Migration(SchemaMigration):
             ('user', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['auth.User'], null=True, blank=True)),
             ('archived', self.gf('django.db.models.fields.BooleanField')(default=False)),
         ))
-        db.send_create_signal('labgeeksrpg_config', ['Notification'])
+        db.send_create_signal('labgeeks_config', ['Notification'])
 
 
     def backwards(self, orm):
         
         # Deleting model 'Notification'
-        db.delete_table('labgeeksrpg_config_notification')
+        db.delete_table('labgeeks_config_notification')
 
 
     models = {
@@ -64,7 +64,7 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        'labgeeksrpg_config.notification': {
+        'labgeeks_config.notification': {
             'Meta': {'object_name': 'Notification'},
             'archived': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'content': ('django.db.models.fields.CharField', [], {'max_length': '256', 'null': 'True', 'blank': 'True'}),
@@ -76,4 +76,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['labgeeksrpg_config']
+    complete_apps = ['labgeeks_config']

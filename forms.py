@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from labgeeksrpg_config.models import Notification
+from labgeeks_config.models import Notification
 
 
 class NotificationForm(ModelForm):
