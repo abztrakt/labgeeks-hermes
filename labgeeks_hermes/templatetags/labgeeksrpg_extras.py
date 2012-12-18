@@ -1,8 +1,6 @@
 from django import template
 register = template.Library()
-
 import re
-from labgeeks_people.models import UserProfile
 
 
 @register.simple_tag
