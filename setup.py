@@ -10,6 +10,6 @@ setup(
     packages = ['labgeeks_hermes',],
     install_requires = [
         'setuptools',
-        'South==0.7.3',
+        'South',
     ],
 )
